@@ -48,7 +48,7 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
                 currentSeqno = await walletContract.getSeqno();
             }
 
-            console.log('transaction confirmed!');
+       
 
             let rawdata = fs.readFileSync('./send_list.json');
 
