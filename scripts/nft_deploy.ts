@@ -40,9 +40,6 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
             );
             let currentNftAddress = await collection.getGetNftAddressByIndex(BigInt(i));
 
-            console.log(currentNftAddress);
-            
-
             let currentSeqno = seqno;
             while (currentSeqno == seqno) {
                 console.log('waiting for transaction number ' + i + ' to confirm...');
