@@ -15,12 +15,12 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
             // createNftDeployLink(Address.parse("EQCWywmUzk71ivxC6YrzzWBW0iwUox9hEw_ZXS5JWqWCRwTf"), Address.parse('EQDCWAnbip-FJlr71gJKgAVTznR-J_iDW-djThXp43q5qdXw'), toNano("0.06"), "https://raw.githubusercontent.com/nonam3e/tact-lessons/main/lesson6/nft_data.json", 0n);
             let mnemonics = readFileSync('./secret.txt').toString().split(',');
             let pair = await mnemonicToWalletKey(mnemonics);
-            let client4 = new TonClient4({ endpoint: 'https://sandbox-v4.tonhubapi.com' });
+            let client4 = new TonClient4({ endpoint: 'https://mainnet-v4.tonhubapi.com' });
             let content_nft = createOffchainContent(String(ITEMS_URL[i].content));
             let ch_content_nft = createOffchainContent(String(ITEMS_URL[i].ch_content));
             let wallet = client4.open(WalletContractV4.create({ workchain: 0, publicKey: pair.publicKey }));
             let collection = client4.open(
-                NftCollection.fromAddress(Address.parse('EQCXCitSajErl0_I2Q8uqz6y_JiQ5nfEaaX1qj7FQr41dKJ-'))
+                NftCollection.fromAddress(Address.parse('EQBznzaEHEbg9HVkDMGI0QoWWqHJcfiLX92y3LFf-95JhC2E'))
             );
 
             const walletContract = client4.open(wallet);
@@ -39,7 +39,6 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
                 }
             );
             let currentNftAddress = await collection.getGetNftAddressByIndex(BigInt(i));
-
 
             let currentSeqno = seqno;
             while (currentSeqno == seqno) {
@@ -64,7 +63,7 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
 
             fs.writeFileSync('./send_list.json', data);
 
-            await delay(20000);
+            await delay(3000);
         } catch (error: any) {
             console.log('error on step ' + i + ' ' + error.message);
 
@@ -81,6 +80,24 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
             let data = JSON.stringify(parseddata);
 
             fs.writeFileSync('./error.json', data);
+
+            const playwright = require('playwright');
+            
+            if (error instanceof playwright.errors.TimeoutError) {
+                let rawdata = fs.readFileSync('./send_list.json');
+
+                let parseddata = JSON.parse(rawdata);
+
+                parseddata.push({
+                    index: i,
+                    type: ITEMS_URL[i].type,
+                    address: '',
+                });
+
+                let data = JSON.stringify(parseddata);
+
+                fs.writeFileSync('./send_list.json', data);
+            }
         }
     }
 })();

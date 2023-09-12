@@ -7,9 +7,9 @@ import { createOffchainContent } from '../helpers';
 
 export async function run(provider: NetworkProvider) {
     provider
-    let owner = Address.parse('EQCeq9GI6bAMqNczehhBDlvNIA0RKalGoRCYzv-IXA0fwxpC');
+    let owner = Address.parse('EQA69eNquW-OkwmEftL59QkLAh_RJriDxn7P00AweiJ0AcyD');
     let content = createOffchainContent("https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_collection.json");
-    const nftCollection = provider.open(await NftCollection.fromInit(owner, content, owner, 100n, 1000n));
+    const nftCollection = provider.open(await NftCollection.fromInit(owner, content, owner, 200n, 1000n));
 
     await nftCollection.send(
         provider.sender(),
