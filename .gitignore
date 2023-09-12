@@ -1,5 +1,5 @@
 node_modules
 temp
 build
-/secret.txt
+secret.txt
 scripts/item_list.ts
