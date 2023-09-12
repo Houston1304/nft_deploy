@@ -23,9 +23,7 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
                 NftCollection.fromAddress(Address.parse('EQCXCitSajErl0_I2Q8uqz6y_JiQ5nfEaaX1qj7FQr41dKJ-'))
             );
 
-            const walletContract = client4.open(wallet);
-            const seqno = await walletContract.getSeqno();
-            console.log('seqno:', seqno);
+        
 
             await collection.send(
                 wallet.sender(pair.secretKey),
