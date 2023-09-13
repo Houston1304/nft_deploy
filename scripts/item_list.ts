@@ -37,6 +37,14 @@ for (let i = 0; i < 150; i++) {
     });
 }
 
+for (let i = 0; i < 20; i++) {
+    ITEMS_URL.push({
+        content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
+        ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_integration.json',
+        type: 'integration',
+    });
+}
+
 for (let i = 0; i < 1; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
@@ -50,14 +58,6 @@ for (let i = 0; i < 1; i++) {
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_film_set.json',
         type: 'film',
-    });
-}
-
-for (let i = 0; i < 20; i++) {
-    ITEMS_URL.push({
-        content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
-        ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_integration.json',
-        type: 'integration',
     });
 }
 
