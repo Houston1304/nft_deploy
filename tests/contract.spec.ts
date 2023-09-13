@@ -44,14 +44,15 @@ describe('NftCollection', () => {
     it("should mint nft", async()=>{
 
         let content_nft = createOffchainContent("https://raw.githubusercontent.com/Bquaith/ton_token/main/item.json")
+        let ch_content_nft = createOffchainContent("https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_vip.json")
         
         const res = await nftCollection.send(deployer.getSender(), {
             value: toNano("0.3")
         },
         {
             $$type: 'RequestNftDeploy',
-            index: 0n,
             content: content_nft,
+            ch_content: ch_content_nft,
             amount: toNano("0.1"),
             owner: deployer.address
         }

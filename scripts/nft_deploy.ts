@@ -82,7 +82,7 @@ const delay = async (ms: number) => await new Promise((resolve) => setTimeout(re
             fs.writeFileSync('./error.json', data);
 
             const playwright = require('playwright');
-            
+
             if (error instanceof playwright.errors.TimeoutError) {
                 let rawdata = fs.readFileSync('./send_list.json');
 

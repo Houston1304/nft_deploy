@@ -13,7 +13,7 @@ function shuffle(array: ItemNft[]) {
 
 export const ITEMS_URL: ItemNft[] = [];
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 1700; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_vip.json',
@@ -21,7 +21,7 @@ for (let i = 0; i < 15; i++) {
     });
 }
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 150; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_shirt.json',
@@ -29,7 +29,7 @@ for (let i = 0; i < 5; i++) {
     });
 }
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 150; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_cap.json',
@@ -37,7 +37,7 @@ for (let i = 0; i < 5; i++) {
     });
 }
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 1; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_dinner.json',
@@ -45,7 +45,7 @@ for (let i = 0; i < 2; i++) {
     });
 }
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 1; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_film_set.json',
@@ -53,7 +53,7 @@ for (let i = 0; i < 2; i++) {
     });
 }
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 20; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_integration.json',
@@ -61,7 +61,7 @@ for (let i = 0; i < 2; i++) {
     });
 }
 
-for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 1; i++) {
     ITEMS_URL.push({
         content: 'https://www.anncom.ru/dialer/nft/nft_item.json',
         ch_content: 'https://www.anncom.ru/dialer/nft/nft_iHOLD/nft_item_open_theater.json',
